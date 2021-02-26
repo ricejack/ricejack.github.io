@@ -1,0 +1,108 @@
+ul#navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+ul#navbar > li a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    border-right: 1px solid white;
+}
+
+ul#navbar > li a:hover {
+    background-color: #111;
+}
+
+div.container {
+    position: relative;
+}
+
+div.container > img {
+    width: 100%;
+    height: auto;
+    opacity: 70%;
+}
+
+div.text-block {
+    position: absolute;
+    float: center;
+    top: 25%;
+    left: 0px;
+    text-align: center;
+    background-color: black;
+    opacity:70%;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+}
+  
+div.gallery:hover {
+    border: 1px solid #777;
+}
+
+div.gallery a {
+    color: black;
+    text-decoration: none;
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+}
+  
+div.title {
+    font-weight: bold;
+    text-align: center;
+    padding: 15px;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+
+div.headshot img {
+    width: 250px;
+    height: auto;
+    float: left;
+    padding-top: 20px;
+    padding-left: 10px;
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
+}
+
+div.about-desc {
+    background-color: rgb(197, 202, 207);
+    padding: 10px;
+    margin-top: 80px;
+    margin-left: 10px;
+    color: rgb(49, 49, 49);
+    position: relative;
+}
+
+div.about-info {
+    padding-left: 40px;
+    padding-top: 20px;
+    margin-left: 260px;
+}
+
+div.about-resume {
+    margin-left: 10px;
+    margin-top: 20px;
+}
