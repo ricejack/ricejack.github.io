@@ -1,29 +1,52 @@
 body {
     background-color: lightgray;
-    font-family: 'Cambria', serif;
 }
 
-.hometext {
-    background-image: url(portfoliobackground.jpg);
-    background-size: cover;
+ul#navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
 }
 
-#homebackground {
-    background-image: url("portfoliobackground.jpg");
-    background-size:cover;
-    height: 89vh;
-    width: auto;
-}
-
-#homebackground-text {
-    position: relative; 
-	top: 25vh; 
-	width: 500px;
-    text-align: center;
+ul#navbar > li a {
+    float: left;
+    display: block;
     color: white;
-    background-color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    border-right: 1px solid white;
+}
+
+ul#navbar > li a:hover {
+    background-color: #111;
+}
+
+div.container {
+    position: relative;
+}
+
+div.container > img {
+    width: 100%;
+    height: auto;
     opacity: 70%;
-    margin: auto;
+}
+
+div.text-block {
+    position: absolute;
+    float: center;
+    top: 25%;
+    left: 0px;
+    text-align: center;
+    background-color: black;
+    opacity:70%;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: 60px;
+    margin-right: 60px;
 }
 
 div.gallery {
@@ -61,13 +84,26 @@ div.desc {
 div.headshot img {
     width: 250px;
     height: auto;
+    float: left;
     padding-top: 20px;
+    padding-left: 10px;
     -webkit-filter: grayscale(1);
     filter: grayscale(1);
 }
 
+div.about-desc {
+    background-color: rgb(197, 202, 207);
+    padding: 10px;
+    margin-top: 80px;
+    margin-left: 10px;
+    color: rgb(49, 49, 49);
+    position: relative;
+}
+
 div.about-info {
-    padding-top: 50px;
+    padding-left: 40px;
+    padding-top: 20px;
+    margin-left: 260px;
 }
 
 div.about-resume {
