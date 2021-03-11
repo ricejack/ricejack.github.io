@@ -4,12 +4,12 @@ body {
 }
 
 .hometext {
-    background-image: url(portfoliobackground.jpg);
+    background-image: url("images/portfoliobackground.jpg");
     background-size: cover;
 }
 
 #homebackground {
-    background-image: url("portfoliobackground.jpg");
+    background-image: url("images/portfoliobackground.jpg");
     background-size:cover;
     height: 89vh;
     width: auto;
