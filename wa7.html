@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Weekly Assignment 7</title>
+<link rel="stylesheet" href="wa7.css">
+</head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
+<h1>Weekly Assignment 7</h1>
+<h2>Version 1</h2>
+<p style="width: 700px; height: auto;">
+    <canvas id="v1" width="300" height="300"></canvas>
+    <script>
+    var ctx1 = document.getElementById('v1').getContext('2d');
+    var version1 = new Chart(ctx1, {
+        type: 'bar',
+        data: {
+            labels: ['Jan 4', 'Jan 16', 'Jan 17', 'Jan 18', 'Feb 5', 'Feb 13', 'Feb 17', 'Mar 6', 'Mar 7'],
+            datasets: [{
+                label: '# of Runs',
+                data: [33,31,20,19,23,25,12,28,29],
+                backgroundColor: 'rgb(128, 191, 255)',
+                borderColor: 'rgb(128, 191, 255)'
+            }]
+        },
+    });
+    </script>
+</p>
+<h2>Version 2</h2>
+
+<p style="width: 700px; height: auto;">
+    <canvas id="v2" width="300" height="300"></canvas>
+    <script>
+    var ctx2 = document.getElementById('v2').getContext('2d');
+    var version2 = new Chart(ctx2, {
+        type: 'bar',
+        data: {
+            labels: ['Jan 4', 'Jan 16', 'Jan 17', 'Jan 18', 'Feb 5', 'Feb 13', 'Feb 17', 'Mar 6', 'Mar 7'],
+            datasets: [{
+                label: '# of Runs',
+                data: [33,31,20,19,23,25,12,28,29],
+                backgroundColor: 'rgb(128, 191, 255)',
+                borderColor: 'rgb(128, 191, 255)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    },
+                    scaleLabel: {
+                        display: true,
+                        labelString: '# of Runs'
+                    }
+                }],
+                xAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Date'
+                    }
+                }]
+            },
+            title: {
+                display: true,
+                text: '# of Ski Runs by Day in 2021'
+            }
+        }
+    });
+    </script>
+<br>
+In this version, I added axes labels as well as a title to the graph. I also changed the y-axis to start from 0 instead of close to the lowest value.
+</p>
+<h2>Version 3</h2>
+<p style="width: 700px; height: auto;">
+    <canvas id="v3" width="300" height="300"></canvas>
+    <script>
+    var ctx3 = document.getElementById('v3').getContext('2d');
+    var version3 = new Chart(ctx3, {
+        type: 'bar',
+        data: {
+            labels: ['Jan 4', 'Jan 16', 'Jan 17', 'Jan 18', 'Feb 5', 'Feb 13', 'Feb 17', 'Mar 6', 'Mar 7'],
+            datasets: [{
+                label: '# of Votes',
+                data: [33,31,20,19,23,25,12,28,29],
+                backgroundColor: [
+                    'rgb(128, 191, 255)',
+                    'rgb(128, 191, 255)',
+                    'rgb(255, 255, 77)',
+                    'rgb(255, 106, 77)',
+                    'rgb(77, 255, 77)',
+                    'rgb(77, 255, 77)',
+                    'rgb(255, 106, 77)',
+                    'rgb(128, 191, 255)',
+                    'rgb(128, 191, 255)'
+                ],
+                borderColor: [
+                    'rgb(128, 191, 255)',
+                    'rgb(128, 191, 255)',
+                    'rgb(255, 255, 77)',
+                    'rgb(255, 106, 77)',
+                    'rgb(77, 255, 77)',
+                    'rgb(77, 255, 77)',
+                    'rgb(255, 106, 77)',
+                    'rgb(128, 191, 255)',
+                    'rgb(128, 191, 255)'
+                ],
+                borderWidth: 3
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    },
+                    scaleLabel: {
+                        display: true,
+                        labelString: '# of Runs'
+                    }
+                }],
+                xAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Date'
+                    }
+                }]
+            },
+            title: {
+                display: true,
+                text: '# of Ski Runs by Day in 2021'
+            }
+        }
+    });
+    </script>
+<br>
+For the third version, I added colors to each of the bars to make it more clear which values were higher than the others. This just gives the person viewing the graphs a better understanding of max/min values.
+</p>
+</body>
+</html>
