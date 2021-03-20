@@ -17,7 +17,7 @@
 
 
 
-$.getJSON("wa8(3).json", function(data_from_file){
+$.getJSON("wa8.json", function(data_from_file){
     //  var labels = data_from_file.map(function(e) {
     //      return e.date;
     // });
@@ -43,6 +43,7 @@ $.getJSON("wa8(3).json", function(data_from_file){
             datasets: [{
                 label: "Arrests Made",
                 borderColor: 'green',
+                fill: false,
                 data: [data_from_file['data']['0']['0'],
                     data_from_file['data']['1']['0'],
                     data_from_file['data']['2']['0'],
@@ -78,6 +79,7 @@ $.getJSON("wa8(3).json", function(data_from_file){
             {
                 label: "Citations Issued",
                 borderColor: 'red',
+                fill: false,
                 data: [data_from_file['data']['0']['1'],
                     data_from_file['data']['1']['1'],
                     data_from_file['data']['2']['1'],
@@ -113,6 +115,7 @@ $.getJSON("wa8(3).json", function(data_from_file){
             {
                 label: 'Warnings Issued',
                 borderColor: 'blue',
+                fill: false,
                 data: [data_from_file['data']['0']['2'],
                     data_from_file['data']['1']['2'],
                     data_from_file['data']['2']['2'],
@@ -152,10 +155,6 @@ $.getJSON("wa8(3).json", function(data_from_file){
         scales: {
                 yAxes: [{
                     display: true,
-                    //ticks: {
-                    //    min: 0, // minimum value
-                    //    max: 10 // maximum value
-                    //}
                 }]
             }
         }
