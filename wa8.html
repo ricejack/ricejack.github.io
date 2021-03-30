@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="Denver November Analysis" content="Analysis of Denver arrests, stops, etc" />
+    <title>Weekly Assignment 8</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+</head>
+
+<body>
+
+<h1 class="container-sm">Weekly Assignment 8</h1>
+
+<div class="container-sm">
+<h2>Step One</h2>
+
+<p>
+<a href="Weekly Assignment 8.html">HTML Version of the Analysis</a>
+<br>
+<a href="Weekly Assignment 8.ipynb">ipynb Version of the Analysis</a>
+<br>
+In this notebook, the Denver Police data was filtered to specifically include the number of citations, arrests, and warnings issued per day throughout the month of November. I used groupby 'date' with a sum aggregation on the dataframe. I then took the resulting dataframe, dropped the columns that were not needed such as latitude and longitude, and exported it as a .json file using to_json and split passed into it. Pandas groupby method is a simple and fast way to perform this. Only a few lines of code were required and unnecessary for loops/if statesments were not needed. 
+</p>
+</div>
+
+<div class="container-sm">
+    <h2>Step Two</h2>
+<canvas id="multipleLineChart"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+
+$.getJSON("wa8.json", function(data_from_file){
+    //  var labels = data_from_file.map(function(e) {
+    //      return e.date;
+    // });
+    // var arrest = data_from_file.map(function(e) {
+    //     return e.arrest_made;
+    // });
+    // var citation = data_from_file.map(function(e) {
+    //     return e.data_from_file['data']['0'];
+    // });
+    // var warning = data_from_file.map(function(e) {
+    //     return e.warning_issued;
+    // });
+    var ctx = document.getElementById('multipleLineChart').getContext('2d');
+    console.log(data_from_file)
+    
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'line',
+
+        // The data for our dataset
+        data: {
+            labels: data_from_file['index'],
+            datasets: [{
+                label: "Arrests Made",
+                borderColor: 'green',
+                fill: false,
+                data: [data_from_file['data']['0']['0'],
+                    data_from_file['data']['1']['0'],
+                    data_from_file['data']['2']['0'],
+                    data_from_file['data']['3']['0'],
+                    data_from_file['data']['4']['0'],
+                    data_from_file['data']['5']['0'],
+                    data_from_file['data']['6']['0'],
+                    data_from_file['data']['7']['0'],
+                    data_from_file['data']['8']['0'],
+                    data_from_file['data']['9']['0'],
+                    data_from_file['data']['10']['0'],
+                    data_from_file['data']['11']['0'],
+                    data_from_file['data']['12']['0'],
+                    data_from_file['data']['13']['0'],
+                    data_from_file['data']['14']['0'],
+                    data_from_file['data']['15']['0'],
+                    data_from_file['data']['16']['0'],
+                    data_from_file['data']['17']['0'],
+                    data_from_file['data']['18']['0'],
+                    data_from_file['data']['19']['0'],
+                    data_from_file['data']['20']['0'],
+                    data_from_file['data']['21']['0'],
+                    data_from_file['data']['22']['0'],
+                    data_from_file['data']['23']['0'],
+                    data_from_file['data']['24']['0'],
+                    data_from_file['data']['25']['0'],
+                    data_from_file['data']['26']['0'],
+                    data_from_file['data']['27']['0'],
+                    data_from_file['data']['28']['0'],
+                    data_from_file['data']['29']['0']
+                ]
+            },
+            {
+                label: "Citations Issued",
+                borderColor: 'red',
+                fill: false,
+                data: [data_from_file['data']['0']['1'],
+                    data_from_file['data']['1']['1'],
+                    data_from_file['data']['2']['1'],
+                    data_from_file['data']['3']['1'],
+                    data_from_file['data']['4']['1'],
+                    data_from_file['data']['5']['1'],
+                    data_from_file['data']['6']['1'],
+                    data_from_file['data']['7']['1'],
+                    data_from_file['data']['8']['1'],
+                    data_from_file['data']['9']['1'],
+                    data_from_file['data']['10']['1'],
+                    data_from_file['data']['11']['1'],
+                    data_from_file['data']['12']['1'],
+                    data_from_file['data']['13']['1'],
+                    data_from_file['data']['14']['1'],
+                    data_from_file['data']['15']['1'],
+                    data_from_file['data']['16']['1'],
+                    data_from_file['data']['17']['1'],
+                    data_from_file['data']['18']['1'],
+                    data_from_file['data']['19']['1'],
+                    data_from_file['data']['20']['1'],
+                    data_from_file['data']['21']['1'],
+                    data_from_file['data']['22']['1'],
+                    data_from_file['data']['23']['1'],
+                    data_from_file['data']['24']['1'],
+                    data_from_file['data']['25']['1'],
+                    data_from_file['data']['26']['1'],
+                    data_from_file['data']['27']['1'],
+                    data_from_file['data']['28']['1'],
+                    data_from_file['data']['29']['1']
+                ]   
+            },
+            {
+                label: 'Warnings Issued',
+                borderColor: 'blue',
+                fill: false,
+                data: [data_from_file['data']['0']['2'],
+                    data_from_file['data']['1']['2'],
+                    data_from_file['data']['2']['2'],
+                    data_from_file['data']['3']['2'],
+                    data_from_file['data']['4']['2'],
+                    data_from_file['data']['5']['2'],
+                    data_from_file['data']['6']['2'],
+                    data_from_file['data']['7']['2'],
+                    data_from_file['data']['8']['2'],
+                    data_from_file['data']['9']['2'],
+                    data_from_file['data']['10']['2'],
+                    data_from_file['data']['11']['2'],
+                    data_from_file['data']['12']['2'],
+                    data_from_file['data']['13']['2'],
+                    data_from_file['data']['14']['2'],
+                    data_from_file['data']['15']['2'],
+                    data_from_file['data']['16']['2'],
+                    data_from_file['data']['17']['2'],
+                    data_from_file['data']['18']['2'],
+                    data_from_file['data']['19']['2'],
+                    data_from_file['data']['20']['2'],
+                    data_from_file['data']['21']['2'],
+                    data_from_file['data']['22']['2'],
+                    data_from_file['data']['23']['2'],
+                    data_from_file['data']['24']['2'],
+                    data_from_file['data']['25']['2'],
+                    data_from_file['data']['26']['2'],
+                    data_from_file['data']['27']['2'],
+                    data_from_file['data']['28']['2'],
+                    data_from_file['data']['29']['2']
+                ]
+            }]
+        },
+
+        // Configuration options go here
+        options: {
+            title: {
+                display: true,
+                text: 'Arrests, Citations, and Warnings in November by Date (Denver)'
+            },
+            scales: {
+                yAxes: [{
+                    display: true,
+                }]
+            }
+        }
+    });
+
+})
+
+</script>
+</div>
+
+<div class="container-sm">
+    <h3>Step Three</h3>
+
+    <p>
+        From this analysis, we can see that there are dips and spikes throughout the month across each type of stop reason. Warnings generally stayed the lowest, this could be due to police cracking down more and issuing more citations/arresting people more frequently. It may also be that many of the stops people were subject to were for more serious crimes. There were a few days where all 3 statistics either spiked or dipped: November 13th was one where the numbers were high and all similar, November 22nd, the numbers were much lower with citations at just 10, and November 24th was also much higher with all three statistics being above 40. The 22nd was Thanksgiving where it would be reasonable to assume that many people were at home with friends and family, not traveling or driving. November 13th had no significant events that were easy to find why warnings specifically were high, could just be people commuting to work and speeding. November 24th was a Saturday after Thanksgiving which might be a day where many people were traveling home, going to the airport, etc. Its also a weekend where more people are out late, drinking, and partying. November 1st and 2nd were also very interesting as they had two of the highest number of arrests made. There was nothing significant about these days for the most part. They fell on the Thursday and Friday after Halloween which may have some role in these numbers (possible Halloween parties). It would be interesting to further investigate the following questions: Does the data follow a 7 day cyclic pattern in relation to the weekends? What kind of events transpired on days with significant spikes in statistics?
+    </p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+
+</body>
+</html>
