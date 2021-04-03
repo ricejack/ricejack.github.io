@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Week 12 Slides</title>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reset.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/theme/moon.min.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/highlight/monokai.min.css" id="highlight-theme">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h3>Weekly Assignment 10 - Transitions Tutorial</h3>
+                    <img src="https://media.giphy.com/media/ZXlK8jcp59bYXku8OC/giphy.gif">
+				</section>
+				
+				<section data-transition="fade-in convex-out" data-transition-speed="slow">
+					<h3>Introduction</h3>
+					<p>Transitions provide the author with a way to better engage the audience that view's their content. Transitions surged in the 2000s with Microsoft PowerPoint with some absolutely rediculous ways of moving from slide to slide. Click to the next slide to see one of these.</p>
+				</section>
+
+				<section data-transition="concave" data-transition-speed="slow">
+					<h3>Statement of Problem</h3>
+                    <p>Slide transitions can be implemented by using the tag data-transition in the section tag. Transitions may not always work perfectly on every device and can also distract from the content if too overwhelming.</p>
+				</section>
+
+				<section data-transition="zoom" data-transition-speed="slow">
+                    <section>
+                        <h3>Solution Details</h3>
+                        <p>In the slides below, use your arrows or the arrows in the bottom right, you will see how to add these transitions and change the speed in your code.</p>
+                    </section>
+
+                    <section data-transition="zoom">
+                        <h3>Adding Transitions</h3>
+                        <pre><code data-trim class="html" data-line-numbers=1,3|2><script type="text/template">
+                            <section data-transition="zoom">
+                                <p>This code creates the transition you just saw</p>
+                            <section>
+                        </script></pre></code>
+                        </code></pre>
+                    </section>
+                    <section data-transition="zoom" data-transition-speed="fast">
+                        <h3>Transition Speed</h3>
+                        <pre><code data-trim class="html" data-line-numbers=1,3|2><script type="text/template">
+                            <section data-transition="zoom" data-transition-speed="fast">
+                                <p>This code does the same thing, but notice the speed?</p>
+                            <section>
+                        </script></pre></code>
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Different Effects</h3>
+                        <p>These effects can be applied to your slides:</p>
+                        <ul>
+                            <li>none: changes instantly</li>
+                            <li>fade: cross fade</li>
+                            <li>slide: slides between backgrounds</li>
+                            <li>convex: slide at a convex angle</li>
+                            <li>concave: slide at a concave angle</li>
+                            <li>zoom: scale the incoming slide up so it grows in from the center of the screen</li>
+                        </ul>
+                    </section>
+				</section>
+
+				<section>
+					<section>
+						<h3>Conclusion</h3>
+						<p>To take it a step further or get more information, consult the documentation:</p>
+                        <ul>
+                            <li><a href="https://revealjs.com/transitions/">RevealJS transitions docs</a></li>
+                            <li><a href="https://revealjs.com/">RevealJS Getting Started</a></li>
+                        </ul>
+					</section>	
+				</section>
+			</div>
+		</div>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/notes/notes.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/highlight/highlight.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/math/math.min.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				slideNumber: 'h/v',
+				math: {
+				      mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+				      config: 'TeX-AMS_HTML-full',
+				      // pass other options into `MathJax.Hub.Config()`
+				      TeX: { Macros: { RR: "{\\bf R}" } }
+				    },
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealHighlight, RevealNotes, RevealMath ]
+			});
+		</script>
+	</body>
+</html>
