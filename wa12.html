@@ -7,15 +7,15 @@
 
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reset.min.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.min.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/theme/serif.min.css" id="theme">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/theme/moon.min.css" id="theme">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/highlight/monokai.min.css" id="highlight-theme">
 
 		<!-- Import Vega -->
-		<script src="https://cdn.jsdelivr.net/npm/vega@3"></script>
-		<script src="https://cdn.jsdelivr.net/npm/vega-lite@2"></script>
-		<script src="https://cdn.jsdelivr.net/npm/vega-embed@3"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vega@5.19.1"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vega-lite@5.0.0"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.15.1"></script>
 
 	</head>
 	<body>
@@ -100,9 +100,7 @@
                         <h3>Population</h3>
                         <div id="vis0"></div>
                         <script type="text/javascript">
-                        
-                            var spec = {
-                            "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+                        var spec = {
                             "config": {
                                 "view": {
                                     "continuousHeight": 600,
@@ -114,31 +112,98 @@
                                 "data": {
                                     "url": "https://vega.github.io/vega-datasets/data/population.json"
                                 },
+                                "background": "#002B36",
+                                "mark": {
+                                    "type": "bar",
+                                },
                                 "encoding": {
                                     "color": {
+                                        "title": "Age",
                                         "field": "age",
-                                        "type": "nominal"
+                                        "type": "nominal",
+                                        "legend": {
+                                            "labelColor": "gray",
+                                            "titleColor": "white",
+                                            "symbolStrokeColor": "gray",
+                                        }
                                     },
                                     "x": {
+                                        "title": "Year",
                                         "field": "year",
-                                        "type": "nominal"
+                                        "type": "ordinal",
+                                        "axis": {
+                                            "labelColor": "gray",
+                                            "labelFontSize": 15,
+                                            "titleColor": "white",
+                                            "titleFontSize": 20
+                                        }
                                     },
                                     "y": {
+                                        "title": "Number of People",
                                         "field": "people",
-                                        "type": "quantitative"
+                                        "type": "quantitative",
+                                        "axis": {
+                                            "labelColor": "gray",
+                                            "labelFontSize": 15,
+                                            "tickColor": "gray",
+                                            "gridColor": "gray",
+                                            "titleColor": "white",
+                                            "titleFontSize": 20
+                                        }
                                     }
                                 },
-                                "mark": "bar"
                             };
-                        
-                            var opt = {"renderer": "canvas", "actions": false};  /* Options for the embedding */
-                        
+                            var opt = {"renderer": "canvas", "actions": true};  /* Options for the embedding */
                             vegaEmbed("#vis0", spec, opt);
-                        
                         </script>
                     </section>
                     <section>
                         <p>This visualization shows the age of the population as it has grown over time in America. At the current scale, it seems like it is exponential.</p>
+                        <pre><code data-trim class="js"><script type="text/template">
+                            ... 
+                            "background": "#002B36",
+                                "mark": {
+                                    "type": "bar",
+                                },
+                                "encoding": {
+                                    "color": {
+                                        "title": "Age",
+                                        "field": "age",
+                                        "type": "nominal",
+                                        "legend": {
+                                            "labelColor": "gray",
+                                            "titleColor": "white",
+                                            "symbolStrokeColor": "gray",
+
+                                        }
+                                    },
+                                    "x": {
+                                        "title": "Year",
+                                        "field": "year",
+                                        "type": "ordinal",
+                                        "axis": {
+                                            "labelColor": "gray",
+                                            "labelFontSize": 15,
+                                            "titleColor": "white",
+                                            "titleFontSize": 20
+                                        }
+                                    },
+                                    "y": {
+                                        "title": "Number of People",
+                                        "field": "people",
+                                        "type": "quantitative",
+                                        "axis": {
+                                            "labelColor": "gray",
+                                            "labelFontSize": 15,
+                                            "tickColor": "gray",
+                                            "gridColor": "gray",
+                                            "titleColor": "white",
+                                            "titleFontSize": 20
+                                        }
+                                    }
+                            ...
+                        </script></pre></code>
+                        </code></pre>
                     </section>
 				</section>
 
@@ -146,43 +211,139 @@
                     <section>
                         <h3>Driving</h3>
                         <div id="vis1"></div>
-                        <script type="text/javascript">
-                        
-                            var spec = {
-                            "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-                            "config": {
-                                "view": {
-                                    "continuousHeight": 600,
-                                    "continuousWidth": 800
-                                    }
-                                },
-                                "width": 600,
-                                "height": 300,
-                                "data": {
-                                    "url": "https://vega.github.io/vega-datasets/data/driving.json"
-                                },
-                                "encoding": {
-                                    "x": {
-                                        "field": "year",
-                                        "type": "nominal"
+                            <script type="text/javascript">
+                                var spec = {
+                                    "data": {
+                                        "url": "https://vega.github.io/vega-datasets/data/driving.json"
                                     },
-                                    "y": {
-                                        "field": "miles",
-                                        "type": "quantitative"
-                                    }
-                                },
-                                "mark": "bar",
-                            };
-                        
-                            var opt = {"renderer": "canvas", "actions": false};  /* Options for the embedding */
-                        
-                            vegaEmbed("#vis1", spec, opt);
-                        
-                        </script>
+                                    "background": "#002B36",
+                                    "vconcat":[{
+                                        "width": 700,
+                                        "mark": {
+                                            "type": "line",
+                                            "color": "red",
+                                        },
+                                        "encoding": {
+                                            "x": {
+                                                "field": "year",
+                                                "type": "ordinal",
+                                                "axis": {
+                                                    "labelColor": "gray",
+                                                    "labelFontSize": 10,
+                                                    "titleColor": "white",
+                                                    "titleFontSize": 12
+                                                }
+                                            },
+                                            "y": {
+                                                "field": "miles",
+                                                "type": "quantitative",
+                                                "axis": {
+                                                    "labelColor": "gray",
+                                                    "labelFontSize": 10,
+                                                    "titleColor": "white",
+                                                    "titleFontSize": 12
+                                                }
+                                            }
+                                        },
+                                    },{
+                                        "width": 700,
+                                        "mark": {
+                                            "type": "line",
+                                            "color": "red",
+                                        },
+                                        "encoding": {
+                                            "x": {
+                                                "field": "year",
+                                                "type": "ordinal",
+                                                "axis": {
+                                                    "labelColor": "gray",
+                                                    "labelFontSize": 10,
+                                                    "titleColor": "white",
+                                                    "titleFontSize": 12
+                                                }
+                                            },
+                                            "y": {
+                                                "field": "gas",
+                                                "type": "quantitative",
+                                                "axis": {
+                                                    "labelColor": "gray",
+                                                    "labelFontSize": 10,
+                                                    "titleColor": "white",
+                                                    "titleFontSize": 12
+                                                }
+                                            }
+                                        },
+                                    }]
+                                }
+                                var opt = {"renderer": "canvas", "actions": true};  /* Options for the embedding */
+                                vegaEmbed("#vis1", spec, opt);
+                            </script>
                     </section>
 
                     <section>
                         <p>This visualization shows the number of miles driven each year from 1956 until 2010. It appears that miles driven each year generally maintained a constant upward trend, dipping off only around 2007.</p>
+                        <pre><code data-trim class="js"><script type="text/template">
+                            ... 
+                            "vconcat":[{
+                                "width": 700,
+                                "mark": {
+                                    "type": "line",
+                                    "color": "red",
+                                },
+                                "encoding": {
+                                    "x": {
+                                        "field": "year",
+                                        "type": "ordinal",
+                                        "axis": {
+                                            "labelColor": "gray",
+                                            "labelFontSize": 10,
+                                            "titleColor": "white",
+                                            "titleFontSize": 12
+                                        }
+                                    },
+                                    "y": {
+                                        "field": "miles",
+                                        "type": "quantitative",
+                                        "axis": {
+                                            "labelColor": "gray",
+                                            "labelFontSize": 10,
+                                            "titleColor": "white",
+                                            "titleFontSize": 12
+                                        }
+                                    }
+                                },
+                            },{
+                                "width": 700,
+                                "mark": {
+                                    "type": "line",
+                                    "color": "red",
+                                },
+                                "encoding": {
+                                    "x": {
+                                        "field": "year",
+                                        "type": "ordinal",
+                                        "axis": {
+                                            "labelColor": "gray",
+                                            "labelFontSize": 10,
+                                            "titleColor": "white",
+                                            "titleFontSize": 12
+                                        }
+                                    },
+                                    "y": {
+                                        "field": "gas",
+                                        "type": "quantitative",
+                                        "axis": {
+                                            "labelColor": "gray",
+                                            "labelFontSize": 10,
+                                            "titleColor": "white",
+                                            "titleFontSize": 12
+                                        }
+                                    }
+                                },
+                            }]
+                            ...
+                        </script></pre></code>
+                        </code></pre>
                     </section>
 				</section>
 			</div>
