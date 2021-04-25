@@ -32,9 +32,9 @@
                             "data": {
                                 "url": "DOGE-USD.json"
                             },
-                            "transform": [
+                            /*"transform": [
                                 {"fold": ["Close","Volume"]}
-                            ],
+                            ],*/
                             "mark": {
                                 "type": "line",
                             },
@@ -55,7 +55,7 @@
                                     }*/
                                 },
                                 "y": {
-                                    "field": "value",
+                                    "field": "Close",
                                     "type": "quantitative",
                                     /*"axis": {
                                         "labelColor": "black",
@@ -65,7 +65,11 @@
                                         "titleColor": "black",
                                         "titleFontSize": 20
                                     }*/
-                                }
+                                },
+                                "y2": {
+                                    "field": "Volume",
+                                    "type": "quantitative"
+                                },
                             },
                         };
                         var opt = {"renderer": "canvas", "actions": true};  /* Options for the embedding */
