@@ -15,74 +15,81 @@
     <div class="container">
         <div class="row align-items-start">
             <div class="col">
-                essay
+                <h1>Why Dogecoin has Mooned and the Reason it won't Reach $1</h1>
+                <p>Dogecoin is a cryptocurrency that was created by two software engineers with the intention to distance itself from other controversial cryptocurrencies like Bitcoin. 
+                    The original concept for the currency was created much as a <a href="https://www.cnn.com/2021/04/17/investing/what-is-dogecoin/index.html">joke (CNN article)</a>. 
+                    Doge was a popular meme circulating at the time and creating a currency with any name is not restricted. Other coins such as the current "sheesh" trend have been created to gain publicity. 
+                    In Dogecoin's early days, the founders used the coin for charity related events as it has gone up and down in value over the years. 
+                    Since 2014 however, the coin has largely remained stagnant. It has increased in value nearly everytime Bitcoin and other coins increased but never to the extent that it has recently. 
+                    There are several fundamental flaws with Dogecoin: supply & demand, future usage, and network improvements being the most notable. Not to mention the fact that it is based off of a meme. 
+                </p>
+                <h3>What are Dogecoins Fundamentals</h3>
+                <p>
+                    Many of the worlds top cryptocurrencies have a foundational concept or usage that contribute to the value of the coin. This is similar to how a stock has a higher or lower value depending on how the company performs. 
+                    Cryptocurrencies like Ethereum act as a platform for people to build decentralized applications (Dapp) off of. The chain and community run the cryptocurrency which supports all of the other Dapps people create. 
+                    Bitcoin for example was created not only as a jumping off point for decentralized currencies but to also create a platform for the currency to have value.
+                    Dogecoin shares nearly none of these fundamentals. It was created with a circulating supply of 100 billion coins (compared to Bitcoin's 21 million cap) and creates 5 billion new coins every year. This means that there will 
+                    never be a finite amount of Dogecoin so the value will continue to be pushed down by more coins. This is similar to how centralized currencies like the USD works, money is constantly being printed. 
+                    Unlike the USD however, no one governs who recieves these new coins. Doge follows a proof-of-work concept, similar to many other cryptocurrencies, which takes a lot of energy. Essentially computers solve complex 
+                    mathematical equations and recieve that coin in return. All of these Dogecoin miners will recieve the new cryptocurrency that is introduced into the supply but it will never end. 
+                    Computers will continue to run to mine these tokens, using a lot of energy, and the coins will never run out.
+                </p>
+                <p>
+                    Due to the amount of coins in circulation, supply and demand shows that Doge will never be able to reach the value that Bitcoin holds, or even $1. Despite becoming the 5th largest cryptocurrency by market cap recently, 
+                    it only reached an all time high of $0.45. Compare that to the coins in the other top positions with values over $500 ($50,000 in the case of Bitcoin), it shows that the supply is simply to large. 
+                    Fundamentals also play a huge role in how much value a coin/stock will hold. Dogecoin has no current plans to serve a purpose other than its use as a meme and purchase of Dallas Mavericks tickets. 
+                    Coins like ETH have a goal in mind and a lot of people supporting its growth which is why large investors will purchase and hold the coin. Dogecoin is being used much of the time as a pump and dump, get rich quick crypto.
+                </p>
             </div>
             <div class="col">
                 <div id="vis0"></div>
                     <script type="text/javascript">
                     var spec = {
-                            "config": {
+                            /*"config": {
                             "view": {
                                 "continuousHeight": 600,
                                 "continuousWidth": 800
                                 }
-                            },
-                            "width": 400,
-                            "height": 300,
+                            },*/
                             "data": {
                                 "url": "DOGE-USD.json"
                             },
-                            /*"transform": [
-                                {"fold": ["Close","Volume"]}
-                            ],*/
                             "mark": {
                                 "type": "line",
                             },
                             "encoding": {
-                                /*"color": {
-                                    "field": "key",
-                                    "type": "nominal"
-                                },*/
                                 "x": {
                                     "title": "Date",
                                     "field": "Date",
                                     "type": "temporal",
-                                    /*"axis": {
-                                        "labelColor": "black",
-                                        "labelFontSize": 15,
-                                        "titleColor": "black",
-                                        "titleFontSize": 20
-                                    }*/
                                 },
                             },
                             "layer": [{
                                 "mark": {
-                                    "type": "line"
+                                    "type": "line",
+                                    "color": "blue"
                                 },
                                 "encoding": {
                                     "y": {
                                         "field": "Close",
                                         "type": "quantitative",
-                                        /*"axis": {
-                                            "labelColor": "black",
-                                            "labelFontSize": 15,
-                                            "tickColor": "black",
-                                            "gridColor": "black",
-                                            "titleColor": "black",
-                                            "titleFontSize": 20
-                                        }*/
+                                        "axis": {
+                                            "titleColor": "blue",                                        }
                                     },
                                 }
                             },
                             {
                                 "mark": {
-                                    "stroke": "#85A9C5", 
+                                    "stroke": "red", 
                                     "type": "line"
                                 },
                                 "encoding": {
                                     "y": {
                                         "field": "Volume",
-                                        "type": "quantitative"
+                                        "type": "quantitative",
+                                        "axis": {
+                                            "titleColor": "red"
+                                        }
                                     }
                                 }
                             }],
@@ -94,6 +101,66 @@
                         };
                         var opt = {"renderer": "canvas", "actions": true};  /* Options for the embedding */
                         vegaEmbed("#vis0", spec, opt);
+                    </script>
+                <div id="vis1"></div>
+                    <script type="text/javascript">
+                    var spec = {
+                            /*"config": {
+                            "view": {
+                                "continuousHeight": 600,
+                                "continuousWidth": 800
+                                }
+                            },*/
+                            "data": {
+                                "url": "BTC-USD.json"
+                            },
+                            "mark": {
+                                "type": "line",
+                            },
+                            "encoding": {
+                                "x": {
+                                    "title": "Date",
+                                    "field": "Date",
+                                    "type": "temporal",
+                                },
+                            },
+                            "layer": [{
+                                "mark": {
+                                    "type": "line",
+                                    "color": "blue"
+                                },
+                                "encoding": {
+                                    "y": {
+                                        "field": "Close",
+                                        "type": "quantitative",
+                                        "axis": {
+                                            "titleColor": "blue",                                        }
+                                    },
+                                }
+                            },
+                            {
+                                "mark": {
+                                    "stroke": "red", 
+                                    "type": "line"
+                                },
+                                "encoding": {
+                                    "y": {
+                                        "field": "Volume",
+                                        "type": "quantitative",
+                                        "axis": {
+                                            "titleColor": "red"
+                                        }
+                                    }
+                                }
+                            }],
+                            "resolve": {
+                                "scale": {
+                                    "y": "independent"
+                                }
+                            }
+                        };
+                        var opt = {"renderer": "canvas", "actions": true};  /* Options for the embedding */
+                        vegaEmbed("#vis1", spec, opt);
                     </script>
             </div>
         </div>
