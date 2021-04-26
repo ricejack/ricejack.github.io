@@ -85,8 +85,12 @@
                                         "type": "quantitative"
                                     }
                                 }
-
-                            }]
+                            }],
+                            "resolve": {
+                                "scale": {
+                                    "y": "independent"
+                                }
+                            }
                         };
                         var opt = {"renderer": "canvas", "actions": true};  /* Options for the embedding */
                         vegaEmbed("#vis0", spec, opt);
