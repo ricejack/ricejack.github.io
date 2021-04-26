@@ -27,7 +27,12 @@
                 <p>
                     Many of the worlds top cryptocurrencies have a foundational concept or usage that contribute to the value of the coin. This is similar to how a stock has a higher or lower value depending on how the company performs. 
                     Cryptocurrencies like Ethereum act as a platform for people to build decentralized applications (Dapp) off of. The chain and community run the cryptocurrency which supports all of the other Dapps people create. 
-                    Bitcoin for example was created not only as a jumping off point for decentralized currencies but to also create a platform for the currency to have value.
+                    Bitcoin for example was created not only as a jumping off point for decentralized currencies but to also create a platform for the currency to have value. The charts on the right show the value and volume of Dogecoin and Bitcoin. 
+                    You can see that Bitcoin (over the past 6 months) has had consistent volume (with the occasional spike) the entire time whereas Dogecoin spiked in early 2021 and continued to rise significantly and fall significantly. 
+                    The level of volatility in the coin is immense. Bitcoin also has had much higher consistent volume (around 80,000,000,000). Dogecoin continues to hit highs and lows with it's volume which has shown some very drastic changes. 
+                </p>
+                <h3>Effect of Supply and Fundamentals on the Price</h3>
+                <p>
                     Dogecoin shares nearly none of these fundamentals. It was created with a circulating supply of 100 billion coins (compared to Bitcoin's 21 million cap) and creates 5 billion new coins every year. This means that there will 
                     never be a finite amount of Dogecoin so the value will continue to be pushed down by more coins. This is similar to how centralized currencies like the USD works, money is constantly being printed. 
                     Unlike the USD however, no one governs who recieves these new coins. Doge follows a proof-of-work concept, similar to many other cryptocurrencies, which takes a lot of energy. Essentially computers solve complex 
@@ -40,129 +45,143 @@
                     Fundamentals also play a huge role in how much value a coin/stock will hold. Dogecoin has no current plans to serve a purpose other than its use as a meme and purchase of Dallas Mavericks tickets. 
                     Coins like ETH have a goal in mind and a lot of people supporting its growth which is why large investors will purchase and hold the coin. Dogecoin is being used much of the time as a pump and dump, get rich quick crypto.
                 </p>
+                <h3>Conclusion</h3>
+                <p>
+                    What does all of this mean for the future of Dogecoin? Well, the outlook is not great if you are looking to be a long term investor in the coin. Like all trends, Dogecoin will eventually stop receiving the amount of press it has gotten lately. 
+                    Everyday people will start to forget about the coin and get bored unless it goes for a wild surge. Without the press and people hyping up the coin (like Elon Musk) the coin doesn't have enough going for it to reach significant value. Now, can it reach a dollar? 
+                    Anything is possible... it was very unlikely to surge past a few cents but for short time, it reached $0.45. In order for the coin to reach a dollar, the amount of attention Doge gets would have to be even higher than its been. The other issue that Doge is now faced with 
+                    is the fact that it's sitting at around $0.20 to $0.30. Before, anyone could take $50, buy some Doge for $0.009 and have thousands of tokens, letting them profit in a big way if it surged. Now, at 20 cents, that will only yield you 250 tokens. Say it did surge to a dollar, 
+                    you've only made $200. The risk at this point is too high for the reward for many people.
+                </p>
             </div>
             <div class="col">
-                <div id="vis0"></div>
-                    <script type="text/javascript">
-                    var spec = {
-                            /*"config": {
-                            "view": {
-                                "continuousHeight": 600,
-                                "continuousWidth": 800
-                                }
-                            },*/
-                            "data": {
-                                "url": "DOGE-USD.json"
-                            },
-                            "mark": {
-                                "type": "line",
-                            },
-                            "encoding": {
-                                "x": {
-                                    "title": "Date",
-                                    "field": "Date",
-                                    "type": "temporal",
+                <div class="container-fluid">
+                    <div id="vis0"></div>
+                        <script type="text/javascript">
+                        var spec = {
+                                /*"config": {
+                                "view": {
+                                    "continuousHeight": 600,
+                                    "continuousWidth": 800
+                                    }
+                                },*/
+                                "height": 300,
+                                "width": 300,
+                                "data": {
+                                    "url": "DOGE-USD.json"
                                 },
-                            },
-                            "layer": [{
                                 "mark": {
                                     "type": "line",
-                                    "color": "blue"
                                 },
                                 "encoding": {
-                                    "y": {
-                                        "field": "Close",
-                                        "type": "quantitative",
-                                        "axis": {
-                                            "titleColor": "blue",                                        }
+                                    "x": {
+                                        "title": "Date",
+                                        "field": "Date",
+                                        "type": "temporal",
                                     },
-                                }
-                            },
-                            {
-                                "mark": {
-                                    "stroke": "red", 
-                                    "type": "line"
                                 },
-                                "encoding": {
-                                    "y": {
-                                        "field": "Volume",
-                                        "type": "quantitative",
-                                        "axis": {
-                                            "titleColor": "red"
+                                "layer": [{
+                                    "mark": {
+                                        "type": "line",
+                                        "color": "blue"
+                                    },
+                                    "encoding": {
+                                        "y": {
+                                            "field": "Close",
+                                            "type": "quantitative",
+                                            "axis": {
+                                                "titleColor": "blue",                                        }
+                                        },
+                                    }
+                                },
+                                {
+                                    "mark": {
+                                        "stroke": "red", 
+                                        "type": "line"
+                                    },
+                                    "encoding": {
+                                        "y": {
+                                            "field": "Volume",
+                                            "type": "quantitative",
+                                            "axis": {
+                                                "titleColor": "red"
+                                            }
                                         }
                                     }
+                                }],
+                                "resolve": {
+                                    "scale": {
+                                        "y": "independent"
+                                    }
                                 }
-                            }],
-                            "resolve": {
-                                "scale": {
-                                    "y": "independent"
-                                }
-                            }
-                        };
-                        var opt = {"renderer": "canvas", "actions": true};  /* Options for the embedding */
-                        vegaEmbed("#vis0", spec, opt);
-                    </script>
-                <div id="vis1"></div>
-                    <script type="text/javascript">
-                    var spec = {
-                            /*"config": {
-                            "view": {
-                                "continuousHeight": 600,
-                                "continuousWidth": 800
-                                }
-                            },*/
-                            "data": {
-                                "url": "BTC-USD.json"
-                            },
-                            "mark": {
-                                "type": "line",
-                            },
-                            "encoding": {
-                                "x": {
-                                    "title": "Date",
-                                    "field": "Date",
-                                    "type": "temporal",
+                            };
+                            var opt = {"renderer": "canvas", "actions": true};  /* Options for the embedding */
+                            vegaEmbed("#vis0", spec, opt);
+                        </script>
+                </div>
+                <div class="container-fluid">
+                    <div id="vis1"></div>
+                        <script type="text/javascript">
+                        var spec = {
+                                /*"config": {
+                                "view": {
+                                    "continuousHeight": 600,
+                                    "continuousWidth": 800
+                                    }
+                                },*/
+                                "data": {
+                                    "url": "BTC-USD.json"
                                 },
-                            },
-                            "layer": [{
                                 "mark": {
                                     "type": "line",
-                                    "color": "blue"
                                 },
                                 "encoding": {
-                                    "y": {
-                                        "field": "Close",
-                                        "type": "quantitative",
-                                        "axis": {
-                                            "titleColor": "blue",                                        }
+                                    "x": {
+                                        "title": "Date",
+                                        "field": "Date",
+                                        "type": "temporal",
                                     },
-                                }
-                            },
-                            {
-                                "mark": {
-                                    "stroke": "red", 
-                                    "type": "line"
                                 },
-                                "encoding": {
-                                    "y": {
-                                        "field": "Volume",
-                                        "type": "quantitative",
-                                        "axis": {
-                                            "titleColor": "red"
+                                "layer": [{
+                                    "mark": {
+                                        "type": "line",
+                                        "color": "blue"
+                                    },
+                                    "encoding": {
+                                        "y": {
+                                            "field": "Close",
+                                            "type": "quantitative",
+                                            "axis": {
+                                                "titleColor": "blue",                                        }
+                                        },
+                                    }
+                                },
+                                {
+                                    "mark": {
+                                        "stroke": "red", 
+                                        "type": "line"
+                                    },
+                                    "encoding": {
+                                        "y": {
+                                            "field": "Volume",
+                                            "type": "quantitative",
+                                            "axis": {
+                                                "titleColor": "red"
+                                            }
                                         }
                                     }
+                                }],
+                                "resolve": {
+                                    "scale": {
+                                        "y": "independent"
+                                    }
                                 }
-                            }],
-                            "resolve": {
-                                "scale": {
-                                    "y": "independent"
-                                }
-                            }
-                        };
-                        var opt = {"renderer": "canvas", "actions": true};  /* Options for the embedding */
-                        vegaEmbed("#vis1", spec, opt);
-                    </script>
-            </div>
+                            };
+                            var opt = {"renderer": "canvas", "actions": true};  /* Options for the embedding */
+                            vegaEmbed("#vis1", spec, opt);
+                        </script>
+                    </div>
+                </div>
         </div>
     </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
